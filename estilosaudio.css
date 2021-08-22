@@ -1,0 +1,38 @@
+#video{
+    width: 720px;
+    margin: 20px auto;
+    background-color: yellow;
+    padding:   5px;
+    border: solid red;
+    border-radius: 8px;
+
+}
+/* como no hay nada que se llame video entonces da igual lo de #video*/
+
+/* primer valor de margin es arriba y abajo, el segundo es iz y der */
+nav{
+    margin: 5px 0;
+}
+
+#botones{
+    float: left;
+    width: 100px;
+    height: 20px;
+}
+
+#barra{
+    background-color: white;
+    width: 600px;
+    height: 16px;
+    border: 1px solid #666666;
+    padding: 3px;
+    margin-left: 80px;
+}
+
+#progreso{
+    position: absolute;
+    width: 0px;
+    height: 16px;
+    background-color: rgb(0,0,150, 2);
+
+}

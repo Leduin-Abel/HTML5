@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <style>
+            #lienzo{
+                border: red 1px solid;
+            }
+
+            section{
+                width: 1200px;
+                position: relative;
+                margin: auto;
+            }
+        </style>
+
+        <script>
+            var y=300;
+            var estado="bajando";
+            var horizontal=0;
+
+            var arriba=y;
+            function comenzar(){
+                var elemento=document.getElementById("lienzo");
+                lienzo=elemento.getContext("2d");
+
+                //setInterval(animacion,25);
+
+                //evento movimiento del raton
+                window.addEventListener("mousemove",animacion,false);
+
+                
+            }
+
+            function animacion(e){
+               
+                //clientX, & clientY me dan las coordenadas del puntero
+                lienzo.clearRect(0,0,1200,900);
+
+                var xdelraton=e.clientX;
+                var ydelraton=e.clientY;
+
+                var xcentro=550;
+                var ycentro=325;
+
+                var angulo=Math.atan2(xdelraton-xcentro,ydelraton-ycentro);
+                var x=xcentro+Math.round(Math.sin(angulo)*10);
+                var y=ycentro+Math.round(Math.cos(angulo)*10);
+
+                lienzo.beginPath();
+
+                lienzo.arc(xcentro,ycentro,20,0,2*Math.PI,false);
+                lienzo.moveTo(620,325);
+                lienzo.arc(600,ycentro,20,0,2*Math.PI,false);  
+
+                lienzo.stroke();
+
+                lienzo.beginPath();
+                lienzo.arc(x,y,10,0,2*Math.PI,false);
+
+                lienzo.moveTo(x,y);
+
+                lienzo.arc(x+50,y,10,0,2*Math.PI,false);
+
+                lienzo.fill();
+            }
+            window.addEventListener("load",comenzar,false);
+        </script>
+    </head>
+
+    <body>
+        <section>
+            <canvas width="1200" height="900" id="lienzo">
+                x
+
+            </canvas>
+        </section>
+
+    </body>
+
+
+</html>

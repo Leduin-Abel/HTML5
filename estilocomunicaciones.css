@@ -1,0 +1,38 @@
+@charset "utf-8";
+#contenedor{
+    width: 1200px;
+    position: relative;
+    margin: auto;
+}
+
+#zonaformulario{
+    float: left;
+    padding: 30px;
+    border: 2px solid #F00;
+}
+
+#zonadatos{
+    float: left;
+    width: 500px;
+    margin-left: 20px;
+    padding: 20px;
+    border: 2px dashed #0000FF;
+}
+
+#zonaprogreso{
+    color: red;
+    font-size: 36px;
+    text-align: center;
+    float: left;
+    width: 500px;
+    margin-left: 20px;
+    padding: 20px;
+    border: 2px dashed #0000FF;
+
+}
+
+.directorio{
+    color: #0000FF;
+    font-weight: bold;
+    cursor: pointer;
+}

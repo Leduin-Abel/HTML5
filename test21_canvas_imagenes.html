@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <style>
+            #lienzo{
+                border: red 1px solid;
+            }
+
+            section{
+                width: 800px;
+                position: relative;
+                margin: auto;
+            }
+        </style>
+
+        <script>
+            function comenzar(){
+                var elemento=document.getElementById("lienzo");
+                lienzo=elemento.getContext("2d");
+
+                var imagen=new Image();
+
+                imagen.src="pic3.jpg";
+
+                imagen.addEventListener("load",manipularimagen,false);
+            }
+
+            function manipularimagen(e){
+
+                imagen=e.target;
+
+                lienzo.drawImage(imagen,0,0);
+
+                //colecciona la informacion RGBA de los pixeles dentro del area asignada  en un array
+                //en imagen.data[0]=rojo; imagen.data[1]=verde;imagen.data[2]=azul;imagen.data[3]=alpha
+                var info_imagen=lienzo.getImageData(0,0,145,145);
+
+                var posicion;
+
+                for(x=0;x<=145;x++){
+                    for(y=0;y<=145;y++){
+                        //width del rectangulo del ImageData
+                        //esta formula me da la informacion del color rojo
+                        posicion=(info_imagen.width*4*y)+(x*4);
+
+                        info_imagen.data[posicion]=255-info_imagen.data[posicion]
+                        info_imagen.data[posicion+1]=255-info_imagen.data[posicion+1]
+                        info_imagen.data[posicion+2]=255-info_imagen.data[posicion+2]
+                    }
+                }
+                //pone la info de la imagen manipulada
+                lienzo.putImageData(info_imagen,0,0);
+            }
+            window.addEventListener("load",comenzar,false);
+        </script>
+    </head>
+
+    <body>
+        <section>
+            <canvas width="800" height="600" id="lienzo">
+                x
+
+            </canvas>
+        </section>
+
+    </body>
+
+
+</html>

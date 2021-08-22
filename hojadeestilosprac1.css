@@ -1,0 +1,65 @@
+
+/*reset CSS*/
+*{
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+} 
+
+#titulo{
+    font: normal 1.7em;
+    margin: 5px auto;
+    text-align: center;
+    border: solid black;
+    border-radius: 15px;
+    width: 500px; /*tambien se da en porcentajes*/
+    background: linear-gradient(cyan , red);
+    box-shadow: grey 0px 0px 5px;
+    color: ghostwhite;
+    text-shadow: ghostwhite 0px 0px 5px;
+  
+
+}
+
+
+h2{
+    font: bold ;
+    margin: 0;
+    padding: 5px 0px 10px 0px;
+
+
+    
+
+}
+
+section{
+    width: 91%;
+    border-top: 1px dashed goldenrod;
+    margin: 15px auto;
+
+}
+
+figure{
+    display: inline-block;
+    padding: 1em; /*sin float*/
+
+}
+/* le aplica las caracteristicas a las img que sean hijas de figure, es un selector descendiente */
+figure img{
+    border-radius: 35px;
+    padding: 4px;
+    background: black;
+    transition: 0.5s 0.1ms;
+} 
+
+figure img:hover{
+    transform: scale(1.2);
+
+}
+
+figcaption{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.4 em;
+    text-align: center;
+    margin: 5px;
+}

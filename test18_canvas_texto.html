@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <style>
+            #lienzo{
+                border: red 1px solid;
+            }
+
+            section{
+                width: 800px;
+                position: relative;
+                margin: auto;
+            }
+        </style>
+
+        <script>
+            function comenzar(){
+                var elemento=document.getElementById("lienzo")
+                lienzo=elemento.getContext("2d");
+
+                //sombreados
+
+                //color de la sombra
+                lienzo.shadowColor="rgba(0,0,0,0.5)";
+
+                //desplazamiento en x & y
+                lienzo.shadowOffsetX=5;
+
+                lienzo.shadowOffsetY=5;
+
+                //difuminado de la sombra
+                lienzo.shadowBlur=6;
+
+
+                //modificacion de texto
+                lienzo.font="bold 50px verdana";
+
+                //alineacion horizontal;con start inicia a escribir en las coordenadas x,y especificadas
+                //con end termina de escribir en esas coordenadas
+                lienzo.textAlign="start";
+
+                //modifica la posicion del texto respecto al renglon
+                lienzo.textBaseline="top";
+
+                //texto relleno("texto",x,y)
+                lienzo.fillText("QUE MAS PUTITOS",100,100);
+
+                //linea base
+               /* lienzo.moveTo(100,100);
+                lienzo.lineTo(200,100);
+                lienzo.stroke();*/
+
+                //measureText me da el ancho del texto
+                var dimensiones=lienzo.measureText("QUE MAS PUTITOS");
+                //lienzo.strokeRect(100,100,dimensiones.width+20,90);
+
+
+            }
+            window.addEventListener("load",comenzar,false);
+        </script>
+    </head>
+
+    <body>
+        <section>
+            <canvas width="800" height="600" id="lienzo">
+                x
+
+            </canvas>
+        </section>
+
+    </body>
+
+
+</html>

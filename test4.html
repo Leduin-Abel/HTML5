@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    
+
+    <style>
+        #principal{
+            width: 500px;
+            /* background-color: royalblue; */
+            text-align: center;
+            margin: 15px auto; 
+            padding: 15px;
+            border: 3px solid cyan;
+            border-radius: 15px ;
+            box-shadow: darkgray 45px 50px 10px; 
+            /* background:-moz-linear-gradient(top,blue,cyan); */
+           /* background:-webkit-linear-gradient(top,blue,cyan); /*para indicar direcciones debo especificar el navegador */
+            background:linear-gradient( red, turquoise);/* degradado lineal */
+            /* background:radial-gradient(blue, yellow); */
+            /* outline: 5px dashed crimson;  */
+            /*outline-offset: 12px;*/ /*bordeado exterior, con offset lo aleja*/
+            /* transform: skew(30deg); transform aplica transformaciones bidimensionales */
+            transition: ease 0.5ms; /*transition me controla el tiempo de las transformaciones*/
+            
+
+
+
+        }
+        /*text-align, alinea el texto*/
+        /*El auto en margin se acomoda a cualquier pantalla y mantiene las medidas*/
+        /* una sola medida en el padding es para los cuatro lados, dos medidas la primera es para arriba y abajo,
+        la segunda izquierda derecha y si se ponen 4 es para cada una siguiendo las manecillas del reloj*/
+        /* border radius define la curvatura del bordeado, puede ser una sola medida para todos o con cada una*/
+        /*box-shadow  y  text-shadow da sombreados, la primera medida es horizontal, la segunda es vertical, la tercera es difuminacion*/
+        #principal:hover{
+           transform: rotate(90deg);
+
+        }    /*esto es una pseudo clase, en esta en particular  me da un efecto roll over (solo aplica con el mouse encima)*/
+        #titulo{
+            font: bold 36px Verdana ;
+            text-shadow: gold 3px 3px 5px ;
+            color: rgba(0, 0, 0, 0.808);
+           } 
+
+
+    </style>
+</head>
+
+
+
+
+
+<body>
+<header id="principal">
+    <span id="titulo">Estilos CSS</span> <!--Se utiliza para dar estilo a palabras individuales o grupos de palabras-->
+
+</header>
+
+
+
+
+
+
+</body>
+
+
+
+
+
+</html>

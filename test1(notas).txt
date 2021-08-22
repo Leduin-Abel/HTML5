@@ -1,0 +1,105 @@
+<!DOCTYPE html>  #se especifica que versión de html se usa, en este caso es el 5, va antes de todo
+<html lang="es"> #de apertura; puede llevar atributos, este especifica el lenguaje
+<head>
+	<meta charset="UTF-8"/> #UTF-8 permite carácteres latinos;meta etiqueta que determina el tipo de carácter de la pagina; la etiqueta no cierra, se coloca la barra de cierre dentro de la etiqueta
+	<meta name="description" content="Página de enseñanza html 5"/> #descripcion de la pagina web para el buscador, name y content son atributos
+	<meta name="keywords" content="html5,css3,Javascript,diseño web"/>
+	<title> Primera página en HTML5 #Ayuda a la indexación y cambia la información de pestaña(los buscadores le prestan mas atención al title que al keyword)# </title>
+	<link rel="stylesheet" href="mijoadeestilos.css"/> #link permite enlazar o incluir documentos adicionales a la pagina, rel(atributo) informa del tipo de archivo, href(atributo) informa de la ruta
+
+
+</head>
+<body>
+
+	<header> #no confundir con head
+		<h1>Este es mi título</h1> #h1 permite destacar info y jerarquizar titulos, la etiqueta es h, 1 es un atributo que va desde 1 hasta 6, siendo 1 el mas grande
+
+	</header>
+
+Hola mundo, esta es la primera página web de leduin
+	<nav>#barra de navegacion
+		<ul>#listas desordenadas porque no se enumeran
+			<li>Esto es genial</li>
+			<li>La programación es maravillosa</li>
+			<li>AAAAAAAAAAAAAAAAAAa</li>
+			<li>BBBBBBBBBBBBBBBB</li>
+			
+		</ul>
+	</nav>
+
+	<aside> #estructura, barra lateral
+		<blockquote>Primer elemento </blockquote>#blockquote es para textos largos
+		<blockquote>Segundo  elemento </blockquote>
+		<blockquote>Putas elemento </blockquote>
+	</aside>
+	
+	<section> #bloque principal
+
+		<article> #permite agrupar elementos 
+			<header> #también permite dar cabeza a diversos elementos dentro de la pagina
+				<hgroup> #agrupa titulos
+					<h2> Título noticia 1 </h2> # se cambia de h1 a h2 porque para algunos navegadores solo puede haber un h1
+					<h3> Subtítulo de la noticia 1 </h3>
+				</hgroup>
+
+			 </header>
+			<figure> #permite ingresar elementos independientes pero que aun así tiene que ver con el contenido
+				
+				<img src="img/pic1.jpg"/> #le ingreso la imagen con la dirección
+				<figcaption> #pie de imagen; va justo despues de la imagen pero dentro del figure
+					Chimba de imagen, no?
+				</figcaption>		
+			</figure>
+		
+			<p><mark> Noticia 1 </mark> </p> #mark resalta, no enfatiza
+			<p> <em> Mas noticia 1 </em> </p> #em da cursiva, para el navegador enfatiza
+			<p><strong> Fin noticia 1 </strong> </p> #<strong>=<b> lo pone en negrita, enfatiza en el buscador
+
+			<footer> 
+				<p> Comentarios </p> #p es parrafos
+			</footer>
+		</article>
+
+		<article>
+			<header>
+				<h2> Título 2 <h2>
+			</header>
+
+			<p>  Noticia 2  </p> #cite es para citaciones (peliculas, libros, trabajos etc)
+			<p> Se verá mas de lo mencionado en <cite> Mas noticia 2 </cite> </p>
+			<p> Fin noticia 2 </p>
+
+			<footer>
+				<p> Comentarios </p>
+			</footer>
+		
+		</article>
+
+		<article>
+			<header>
+				<hgroup>
+					<h2> Título 3 </h2>
+					<h3> Subtitulo 3 </h3>
+				</hgroup>
+			<time datetime="2020/06/15" pubdate> Creada el 15/05/2020 </time> #lleva tiempo, pubdate indica que es fecha hora, datetime es atributo de la fecha
+
+			</header>
+			<p> Noticia 3 </p>
+			<p> Mas noticia 3 </p>
+			<p> Fin noticia 3 </p>
+
+			<footer>
+				<p> Comentarios </p>
+			</footer>
+		</article>
+
+	</section>
+
+	<footer> #pié de pagina
+		<small>cccCCCCcccc</small> #pone la letra chiquita, usualmente para testos legales <address> Call me: 3108818965 </address> #address es para info de contacto, usualmente va en el footer
+	</footer>
+
+
+</body>
+
+</html> de cierre

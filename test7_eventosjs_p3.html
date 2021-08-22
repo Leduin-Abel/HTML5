@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <script>
+        function eventos(){
+            var elemento1=document.getElementsByTagName("p")[0];
+            var elemento2=document.getElementsByTagName("img")[0];
+            //el parametro booleano establece prioridad para eventos de elementos anidados
+            elemento1.addEventListener("click",aviso2,true);
+            elemento2.addEventListener("click",aviso1,false);
+        }
+
+        function aviso1(){
+            alert("Soy la imagen");
+        }
+
+        function aviso2(){
+            alert("Soy el parrafo");
+        }
+
+        window.addEventListener("load",eventos,false);
+    </script>
+</head>
+
+<body>
+    <p><img src="img/pic3.jpg" /></p>
+
+</body>
+
+
+
+
+
+</html>

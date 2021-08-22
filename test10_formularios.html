@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+
+</head>
+<body>
+    <section>
+        <!-- method es como el formulario envia los datos, con el metodo get me permite enviar info con las url -->
+        <!-- por defecto el autocomplete está on -->
+
+        <form id="miformulario" name="miformulario " method="GET" autocomplete="on">
+            <!-- input me permite determinar el tipo de ingreso de informacion, submit es el boton de enviar, sin el atributo name no funciona -->
+            <!-- el input para email y url tambien autovalida -->
+            <!-- para ingresar texto -->
+            <!-- <input type="text" name="Texto" id="Texto">  -->
+            <!-- atributo pattern me permite determinar las caracteristicas que debe tener lo que se ingrese -->
+
+            <!-- para ingresar emails -->
+            <!-- br es salto de linea -->
+            <!-- multiple permite el envio de mas de un campo -->
+            <!-- el atributo de input form="nombreformulario" me permite agregar inputos fuera de la etiqueta form, pero que funcionan como si estuvieran dentro -->
+            Email:&nbsp;<input type="email" name="Email" id="Email" multiple><br> <br>
+
+            <!-- Search es para busquedas -->
+            <!-- Buscar:&nbsp;<input type="search" name="Buscar" id="Buscar"><br> <br> -->
+
+            <!-- Para ingresar Url -->
+            <!-- Url:&nbsp;<input type="url" name="Url" id="Url"> -->
+
+            <!-- entrada numerica, me permite configurar un minimo, un maximo y de cuanto en cuanto , placeholder son instrucciones o marca de agua en el cuadro-->
+            <!-- atributo required exije el campo;  autofocus dice en que campo aparece el cursor -->
+            Edad:&nbsp;<input type="number" name="Edad" id="Edad" min="0" max="100" step="5" placeholder="Multiplod de 5" required autofocus > <br><br>
+        
+            <!-- Range es una barra selectora -->
+            <!-- Edad:&nbsp;<input type="range" name="Edad" id="Edad" min="0" max="100" step="5" > -->
+            
+
+            <!-- tambien admite semana, mes, hora, fecha-hora local  -->
+            Fecha:&nbsp;<input type="date" name="Fecha" id="Fecha" >
+
+
+
+            <!-- value determina el texto del boton -->
+            <input type="submit" value="mande esa monda">
+        
+
+
+
+        </form> 
+    </section>
+
+</body>
+
+
+
+</html>

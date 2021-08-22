@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <style>
+            #lienzo{
+                border: 1px solid red;
+            }
+        </style>
+
+        <script>
+            function comenzar(){
+                var elemento=document.getElementById("lienzo");
+
+                lienzo=elemento.getContext("2d");
+
+                lienzo.beginPath();
+                
+                //Arc(x,y,r,ang1,ang2,bool) genera un arco, recibe las coordenadas xy del centro,radio, angulo inicial y final (en radianes), 
+                //y un booleano que determina la direccion de dibujo entre los dos angulos
+                //lienzo.arc(250,100,100,0,0.567*Math.PI,true);
+                //math.pi es pi
+
+                //para utilizar trazados de curvas cuadraticas se necesitan 3 puntos:
+                //punto inicial
+                /*lienzo.moveTo(50,50);
+
+                //punto de control(xc,yc) y punto final(xf,yf)
+                //quadraticCurveTo(xc,yc,xf,yf)
+                lienzo.quadraticCurveTo(300,80,50,290);*/
+
+                //bezierCurveTo funciona igual que quadraticCurveTo, solo que tiene dos puntos de control
+                lienzo.moveTo(250,50);
+
+                lienzo.bezierCurveTo(200,125,300,125,250,200);
+                
+
+                lienzo.stroke();
+                
+            }
+
+            window.addEventListener("load",comenzar,false);
+        </script>
+
+    </head>
+    <body>
+        <section>
+            <canvas width="500" height="300" id="lienzo">
+                yyy
+            </canvas>
+
+        </section>
+
+    </body>
+</html>

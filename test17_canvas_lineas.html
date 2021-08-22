@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <style>
+            #lienzo{
+                border: 1px solid red;
+            }
+
+            section{
+                margin: auto;
+                width: 800px;
+                position: relative;
+            }
+            
+        </style>
+        <script>
+            function comenzar(){
+                var elemento=document.getElementById("lienzo");
+                lienzo=elemento.getContext("2d");
+
+                lienzo.arc(200,150,100,0,2*Math.PI,false);
+                lienzo.stroke();
+
+                //grosor de linea
+                lienzo.lineWidth=5;
+
+                //las puntas de la linea
+                lienzo.lineCap="round";
+
+                //cambio de linea
+                lienzo.beginPath();
+
+                lienzo.arc(200,170,60,0,Math.PI,false);
+                
+                lienzo.stroke();
+
+                lienzo.lineWidth=5;
+
+                //especifica como se unen las lineas
+                lienzo.lineJoin="miter"; //miter es una union punteada
+
+                //solo porque use miter puedo usar miterLimit
+                //lienzo.miterLimit=; //cuanto se alarga el miter
+
+                lienzo.beginPath();
+                
+                lienzo.moveTo(195,135);
+
+                lienzo.lineTo(215,155);
+
+                lienzo.lineTo(195,155);
+
+                lienzo.stroke();
+
+                lienzo.lineWidth=1;
+
+                lienzo.beginPath();
+
+                lienzo.arc(175,110,7,0,2*Math.PI,false);
+
+                lienzo.arc(225,110,7,0,2*Math.PI,false);
+
+                lienzo.fill();
+
+                lienzo.beginPath();
+
+                lienzo.arc(168,106,15,0,2*Math.PI,false);
+
+                lienzo.stroke();
+
+
+                lienzo.beginPath();
+                lienzo.arc(232,106,15,0,2*Math.PI,false);
+                lienzo.stroke();
+
+
+
+            }
+            window.addEventListener("load",comenzar,false);
+        </script>
+
+    </head>
+
+
+
+    <body>
+        <section>
+            <canvas width="800" height="600" id="lienzo">
+                y
+            </canvas>
+        </section>
+
+    </body>
+
+
+
+
+ </html>

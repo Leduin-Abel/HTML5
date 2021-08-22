@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<title> Documento</title>
+
+<style> /*esto va en css*/
+
+/*p[name^="mis"] {
+ color: red;} *//*El ^= le aplica la caracteristica a los que tengan el atributo name que inicie con lo que elija*/
+/* EL $= es lo que terminen en lo que elija*/
+/*El *= se lo aplica  a los que lo tengan en algun punto*/
+
+p:nth-child(even){color: red;} /* Revisa cuales son hermanas y selecciona la segunda de arriba a abajo*/
+</style>
+
+</head>
+<body> 
+<!-- /* <p name="miselementos">Hola</p>  -->
+<!-- <p name="miselementos">Adiós</p>  -->
+<!-- <p>Hola de nuevo</p>  -->
+
+<p>hola</p>
+<p>aaaaaaaaaaa</p>
+<p>BBBBB</p>
+
+<ol>
+    <li> Frutas </li>
+    <li>
+        <p>Manzana</p>
+        <p>Pera</p>
+        <p>Limón</p>
+        <p>Melón</p>
+    </li>
+
+
+</ol>
+
+</body>
+
+
+
+</html>

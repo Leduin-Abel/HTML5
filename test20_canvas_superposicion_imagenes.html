@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <style>
+            #lienzo{
+                border: red 1px solid;
+            }
+
+            section{
+                width: 1200px;
+                position: relative;
+                margin: auto;
+            }
+        </style>
+
+        <script>
+            function comenzar(){
+                var elemento=document.getElementById("lienzo")
+                lienzo=elemento.getContext("2d");
+                
+                //manejo de imagenes
+                var imagen=new Image();
+
+                imagen.src="img3/pic1.jpg";
+
+                imagen.addEventListener("load",function(){
+
+                    //dibujo de imagen la mas sencilla
+                    /*lienzo.drawImage(imagen,250,300)*/
+
+                    //los ultimos dos son el tamaño, ancho y alto
+                    /*lienzo.drawImage(imagen,0,0,elemento.width,elemento.height)*/
+
+                    //con todos los parametros me permite hacer recortes
+                    //los primeros dos son donde inicia el recorte; la segunda pareja es el tamaño original de la imagen;
+                    //3ra pareja donde quiero dibujar la imagen recortada; 4ta pareja tamaño original del desorden
+                    lienzo.drawImage(imagen,50,10,75,75,0,0,300,300)
+                    
+                    },
+                    
+                    false);
+
+                //manejo de superposiciones
+                /*lienzo.fillStyle="#880000";
+
+                lienzo.fillRect(400,250,300,100);
+
+                //gestiona que elemento está encima
+                //lienzo.globalCompositeOperation="destination-atop";//con -atop adquiere el color del recuadro en la seccion que coinciden
+                //con -over el cuadro queda por encima
+
+                //-in desecha zonas no-comunes y desaparece el rectangulo
+                lienzo.globalCompositeOperation="source-out" //-out desaparece el rectangulo y muestra solo las zonas no comunes 
+
+
+                lienzo.fillStyle="#AAAAFF";
+
+                lienzo.font="bold 80px verdana";
+
+                lienzo.textAlign="center"
+
+                lienzo.textBaseline="middle"
+
+                lienzo.fillText("ASDASDASDA",550,300);*/
+
+                
+            }
+            window.addEventListener("load",comenzar,false);
+        </script>
+    </head>
+
+    <body>
+        <section>
+            <canvas width="1200" height="900" id="lienzo">
+                x
+
+            </canvas>
+        </section>
+
+    </body>
+
+
+</html>

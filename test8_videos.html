@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="estilosvideo.css">
+    <script type="text/javascript" src="funvideo.js"></script>
+
+
+
+
+</head>
+
+
+
+<body>
+    
+    <!-- Si no le especifico nada no se reproduce y queda con su tamaño original -->
+    <!-- Modificando atributos -->
+    <!-- <video src="video/vid1.mp4" autoplay controls width="900" height="400" ></video>  -->
+<!--PAra que tenga varios formatos (mp4 y ogg)-->
+    <section id="video"> 
+        <!-- poster es para poner una imagen antes de reproducir -->
+            <!-- <video id="mivideo" width="520" controls loop poster="img/pic4.jpg"> -->
+            <video id="mivideo" width="720" loop >
+            
+
+            <source src="video/vid2.mp4">
+            <source src="video/vid2.ogg">
+
+        </video>
+        <!-- botonera independiente -->
+        <nav>
+            <div id="botones">
+                <!-- es un boton :V -->
+                <button type="button" id="reproducir" >play</button>
+            </div>
+            <div id="barra">
+                <div id="progreso">
+
+
+                </div>
+
+
+            </div>
+
+
+
+        </nav>
+
+
+    </section>
+
+</body>
+</html>   

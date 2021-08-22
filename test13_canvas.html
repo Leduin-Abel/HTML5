@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <style>
+            #lienzo{
+                background-color: forestgreen;
+            }
+
+            section{
+                width: 500px;
+                position: relative;
+                margin: auto;
+            }
+
+            
+
+        </style>
+
+        <script>
+            function comenzar(){
+                var elemento=document.getElementById("lienzo");
+                //le informo a la pagina que voy a hacer dibujos en 2d
+                lienzo=elemento.getContext("2d");
+                
+
+                //Modificar el estilo del cuadro rellenado, debe ir antes de dibujar, permite el color en ingles o codigo hexadecimal
+                lienzo.fillStyle="#9DDCF4";
+
+                //Modificar el estilo del cuadro vacio
+                lienzo.strokeStyle="red";
+
+                //transparencia
+                lienzo.globalAlpha="0.3";
+
+                //fillRect(x,y,alto,ancho) dibuja un rectangulo relleno en la posicion x,y con un alto y ancho
+                //strokeRect es un rectangulo vacío
+                //el eje de coordenadas se centra en la esquina superior izquierda del canvas
+                lienzo.strokeRect(100,100,120,120);
+                lienzo.fillRect(110,110,100,100);
+
+                //clearRect(x,y,alto,ancho) hace un cuadrado transparente en las coordenadas x,y con un alto y ancho
+                //el eje de coordenadas se centra en la esquina superior izquierda del cuadro a borrar
+                lienzo.clearRect(120,120,80,80);
+
+
+
+            }
+
+
+
+            window.addEventListener("load",comenzar,false);
+        </script>
+    </head>
+
+    <body>
+        <section id="dibujo">
+
+            <canvas id="lienzo" width="500" height="300">
+                yaper mijo
+            </canvas>
+
+        </section>
+    </body>
+</html>

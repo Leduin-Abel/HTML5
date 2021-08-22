@@ -1,0 +1,14 @@
+#zonaformulario{
+    float: left;
+    padding: 30px;
+    border: 2px dotted blue;
+}
+
+#zonadatos{
+    float: left;
+    width: 600px;
+    margin-left: 50px;
+    padding: 30px;
+    border: 2px dotted red;
+}
+

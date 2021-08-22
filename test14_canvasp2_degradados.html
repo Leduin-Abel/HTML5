@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <style>
+            section{
+                width: 500px;
+                margin: auto;
+            }
+/* 
+            #lienzo{
+                background-color: royalblue;
+            } */
+        </style>
+
+        <script>
+            function comenzar(){
+                var elemento=document.getElementById("lienzo");
+
+                lienzo=elemento.getContext("2d");
+                // createLinearGradient(x1,y1,x2,y2) me permite crear un degrado lineal con las coordenadas iniciales y las finales
+                //var degradado=lienzo.createLinearGradient(0,150,500,150);
+
+                //createRadialGradient(x1,y1,r1,x2,y2,r2) crea un degradado circular con el centro y radio de la circunferencia inicial y el de la final
+                var degradado=lienzo.createRadialGradient(250,150,50,250,150,350);
+
+                //indicar donde terminan los colores del degradasdo el numero está entre 0 y 1
+                degradado.addColorStop(0,"red");
+                degradado.addColorStop(1,"blue");
+
+                lienzo.fillStyle=degradado;
+
+                //la pagina no muestra nada hasta crear una figura
+                lienzo.fillRect(0,0,500,300)
+
+            }
+
+
+            window.addEventListener("load",comenzar,false);
+        </script>
+    </head>
+    <body>
+        <section id="dibujo">
+            <canvas id="lienzo" width="500" height="300">
+                yaper mijin
+            </canvas>
+
+        </section>
+    </body>
+
+</html>

@@ -1,0 +1,25 @@
+
+
+/*body {background-color: blue;}*/  /* es un selector de etiqueta, le indica que voy a modificar el body */
+/* background color modifica el color*/ 
+
+#cabeceraweb{background-color: blue;} /*header por si solo modifica todos los header de la pagina*/ /*se debe utilzar el selector de id con formato #nombreheader*/
+
+#navegacionprincipal{background-color: red;}
+
+#barralateral{background-color: green;
+     float: left;
+    height: 1230px;} /*float hará que este bloque se situe a la izquierda, y todo lo que le sigue lo va a rodear porque se sale del flujo de la pagina, como si no estuviera; se adapta al  contenido */
+
+#contenidoprincipal{background-color: purple; 
+    margin-left: 200px;
+     padding-left: 15px;
+      padding-top: 15px;} /* margin controla los margenes del bloque, no tiene en cuenta los float */
+      /*padding es el espaciado dentro del bloque*/
+
+#pieprincipal{background-color: yellow;
+     clear: both;
+    margin-top: 50px;} /*el clear tiene en cuenta el float, rompiendo el funcionamiento y continua el flujo de disposicion de elementos*/
+
+li{background-color: aqua;
+display: inline;} /*  pasa de ser block a inline, ya no ocupa todo el ancho de la pantalla; se adapta al contenido*/ 

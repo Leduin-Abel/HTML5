@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <style>
+            #lienzo{
+                border: red 1px solid;
+            }
+
+            section{
+                width: 800px;
+                position: relative;
+                margin: auto;
+            }
+        </style>
+
+        <script>
+            function comenzar(){
+                var elemento=document.getElementById("lienzo")
+                lienzo=elemento.getContext("2d");
+
+                //guardar el estado del canvas
+                lienzo.font="bold 20px verdana";
+
+                //guarda las caracteristicas actuales del canvas
+                lienzo.save();
+
+                lienzo.fillText("QQQQQQQQQQQ",50,50);
+
+                lienzo.translate(60,70);
+
+                lienzo.rotate(Math.PI/180*55);
+
+                lienzo.fillText("QQQQQQQQQQQ",0,0);
+
+                //lienzo.rotate(-Math.PI/180*55);
+                
+                //rescato las caracteristicas guardadas
+                lienzo.restore();
+
+                lienzo.translate(300,400);
+
+                lienzo.scale(2,2);
+
+                lienzo.fillText("QQQQQQQQQQQ",100,100);
+
+
+
+
+
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               /* //transform me permite modificar varias propiedades(similares a las tres transformaciones anteriores)
+                //transform(scaleX,rotacion,lo tuerce,scaleY,traslateX,traslateY)
+                //es acumulativo, se aplica sobre la ultima vez aplicado
+                lienzo.transform(3,0,0,1,0,0);
+
+
+                lienzo.font="bold 20px verdana";
+
+                lienzo.fillText("QQQQQQQQQQQ",50,50);
+
+                lienzo.transform(1,0,0,10,0,0);
+
+                //reseteo de caracteristicas,  cancela la acumulacion
+                lienzo.setTransform(1,0,0,10,0,0);
+
+
+                lienzo.font="bold 20px verdana";
+
+                lienzo.fillText("QQQQQQQQQQQ",50,50);*/
+
+                
+
+
+
+
+
+
+
+                //antes de transform
+                /*
+                //tipo de letra
+                lienzo.font="bold 20px verdana"
+
+                lienzo.fillText("QQQQQQQQQQQ",50,20);
+
+
+                //traslacion del origen de coordenadas
+                lienzo.translate(100,100);
+
+                //modificando el tamaño
+                lienzo.scale(3,3);//(3,1)el triple de lo es originalmente en el eje x, no modifica el eje y
+
+                //rotacion en radianes
+                lienzo.rotate(Math.PI);
+                //se debe repetir el texto para visualizar el nuevo eje  y demas transformaciones
+                lienzo.fillText("QQQQQQQQQQQ",-250,-20);*/
+
+                
+            }
+            window.addEventListener("load",comenzar,false);
+        </script>
+    </head>
+
+    <body>
+        <section>
+            <canvas width="1200" height="900" id="lienzo">
+                x
+
+            </canvas>
+        </section>
+
+    </body>
+
+
+</html>

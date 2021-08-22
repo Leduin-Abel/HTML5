@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <script>
+        var imagen=new Array(3); //declaracion de variable para que sea global
+        //new Array, es un nuevo array(nro de posiciones), inicia a contar desde cero
+        function tipoflor(){
+            alert("Pensamientos"); 
+        }
+
+        function eventos(){
+            for(var i=0; i<4;i++){
+            
+            //document.getElementsByTagName("img")[0].onclick=tipoflor;
+                imagen[i]=document.getElementsByTagName("img")[i];
+            }
+            //para una sola imagen
+            //imagen.addEventListener("mouseover",crecer,false);//addeventlistener sirve para organizar eventos; recibe el tipo de evento que desencandena(type), la funcion a ejecutar(listener) y un valor booleano(sirve para elementos anidados) 
+            //imagen.addEventListener("mouseout",decrecer,false);
+            //imagen.addEventListener("click",tipoflor,false);
+            
+            //con funciones anonimas y con varias imagenes
+            imagen[0].addEventListener("mouseover",function(){imagen[0].width=300;imagen[0].height=300;},false);//en vez de la funcion a ejecutar también pueden haber funciones lambda
+            imagen[0].addEventListener("mouseout",function(){imagen[0].width=200;imagen[0].height=200;},false);
+            imagen[0].addEventListener("click",tipoflor,false);
+
+            imagen[1].addEventListener("mouseover",function(){imagen[1].width=300;imagen[1].height=300;},false);//en vez de la funcion a ejecutar también pueden haber funciones lambda
+            imagen[1].addEventListener("mouseout",function(){imagen[1].width=200;imagen[1].height=200;},false);
+            imagen[1].addEventListener("click",tipoflor,false);
+
+            imagen[2].addEventListener("mouseover",function(){imagen[2].width=300;imagen[2].height=300;},false);//en vez de la funcion a ejecutar también pueden haber funciones lambda
+            imagen[2].addEventListener("mouseout",function(){imagen[2].width=200;imagen[2].height=200;},false);
+            imagen[2].addEventListener("click",tipoflor,false);
+
+            imagen[3].addEventListener("mouseover",function(){imagen[3].width=300;imagen[3].height=300;},false);//en vez de la funcion a ejecutar también pueden haber funciones lambda
+            imagen[3].addEventListener("mouseout",function(){imagen[3].width=200;imagen[3].height=200;},false);
+            imagen[3].addEventListener("click",tipoflor,false);
+
+
+
+
+            //solo va click/mouseover porque el "on"click/mouseover solo va en linea
+            //puedo desencadenar varios eventos para el mismo objeto
+
+
+        }
+
+        // function crecer(){
+        //     imagen.width=300;
+        //     image.height=300;
+
+        // }
+
+        // function decrecer(){
+        //     imagen.width=200;
+        //     image.height=200;
+        // }
+
+       // window.onload=eventos;
+       window.addEventListener("load",eventos,false);
+
+    </script>
+</head>
+
+<body>
+   <!--<p> <img src="img/pic1.jpg" onclick="tipoflor()"/></p>-->  <!--no se recomienda programar así-->
+   <p> <img src="img/pic3.jpg" />&nbsp;&nbsp;<img src="img/pic4.jpg" />&nbsp;&nbsp;<img src="img/pic6.jpg" />&nbsp;&nbsp;<img src="img/pic7.jpg" /></p>
+</body>
+
+</html>

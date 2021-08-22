@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <style>
+            table{
+                text-align: center;
+                background-color: aquamarine;
+                width: 25%;
+                margin: auto;
+                border: 2px cyan dashed;
+            }
+            td{
+                padding: 15px;
+            }
+
+        </style>
+
+        <script>
+            var edad;
+            function comenzar(){
+                edad=document.getElementById("miedad");
+
+                /*Change es un evento que responde ante cualquier cambio*/
+                edad.addEventListener("change",cambia_rango,false);
+                //el input me permite hacer cambios de uno en uno, "en tiempo real", con change funciona ya que el step lo ayuda a los cambios
+                // edad.addEventListener("input",cambia_rango,false);
+
+
+
+
+                /*Invalid es si algun elemento del formulario no cumple la validacion,genera un objeto error*/
+                document.datos_usuario.addEventListener("invalid",validar,true);
+
+                //validacion en tiempo real
+                document.datos_usuario.addEventListener("input",validar_tiempo_real,false);
+
+                /*obtengo el elemento y lo pongo a la escucha de un evento*/
+                document.getElementById("enviar").addEventListener("click",enviar,false);
+            }
+
+            function cambia_rango(){
+                var salida=document.getElementById("rango");
+                var calculo=edad.value-30;
+                if(calculo<30){
+                    calculo=0;
+                    edad.value=30;
+                }
+
+                salida.innerHTML=calculo +" a "+edad.value;
+            }
+
+            function validar(e){
+                //recibe el error en la variable e
+                //target me dice donde paso el evento(en este caso el error)
+
+                var elemento=e.target;
+
+                elemento.style.background="#FFDDDD";
+            }
+
+            function enviar(){
+                var cuadro_usuario=document.getElementById("usuario");
+
+                //checkValidity verifica si la validacion es exitosa o no
+                var correcto=document.datos_usuario.checkValidity();
+
+                if(correcto==true){
+                    document.datos_usuario.submit();
+                }
+                //ValueMissing verifica si un elemento está vacío y este posee el atributo required
+                //patternMismatch verifica si un elemento no sigue el patron asignado
+                
+                else if(cuadro_usuario.validity.valueMissing==true || cuadro_usuario.validity.patternMismatch==true){
+                    alert("El usuario no puede estar vacío y debe tener 3 letras")
+                }
+
+
+            }
+            function validar_tiempo_real(e){
+                var elemento=e.target;
+                //.validity.valid es un metodo del ValidityState que chequea el estado de validacion del elemento
+                if(elemento.validity.valid==true){
+
+                    elemento.style.background="#FFFFFF"
+                }
+                else{
+                    elemento.style.background="#FFDDDD"
+                }
+            }
+
+
+
+
+            window.addEventListener("load",comenzar,false);
+        </script>
+    </head>
+    <body>
+        <section>
+
+            <form name="datos_usuario" method="GET">
+
+                <table><tr><td>
+                    <!-- En el pattern [caracteristicas permitidas]{#numero de letras} -->
+                    <!-- maxlength limite de carecteres, afecta el tamaño de la casilla -->
+                    Usuario:</td><td><input pattern="[A-Za-z]{3}" name="usuario" id="usuario" maxlength="10" required></td></tr>
+                    <tr><td>
+                    Email:</td><td><input type="email" name="miemail" id="miemail" required></td></tr>
+                    <tr><td>
+                    Edad:</td><td><input type="range" name="miedad" id="miedad" min="0" max="120" value="30" step="30" ></td></tr>
+                    <tr><td>
+                    <output id="rango">0 a 30</output>
+                    </td></tr>
+
+                    <tr><td>
+                    <input type="submit" id="enviar" value="Registrar"></td></tr>
+                 </table>
+
+
+
+            </form>
+
+        </section>
+
+    </body>
+
+
+</html>
